@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Configurator Lift</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet' type="text/css">
+</head>
+<body>
+    <div id="liftContainer">
+        <div id="stanga">
+            <div id="titluPoza">
+                <h2>Poza cabina</h2>
+            </div>
+            <div id="poza">
+                <!-- Cabina desen baza -->
+                <img id="Baza" src="imagini/Cabina-desen-baza.png" style="max-width:75%; position:relative; z-index:10;">
+                <!-- Plafon -->
+                <img id="Plafon" src="" class="kuku">
+                <!-- Podea -->
+                <img id="Podea" src="" class="kuku">
+                <!-- Pereti -->
+                <img id="Pereti" src="" class="kuku">
+                <!-- Semnalizari -->
+                <img id="Semnalizari" src="" class="kuku">
+                <!-- Oglinda -->
+                <img id="Oglinda" src="" class="kuku">
+                <!-- ManaCurenta -->
+                <img id="ManaCurenta" src="" class="kuku">
+                <!-- Plinta  -->
+                <img id="Plinta" src="" class="kuku">
+            </div>
+            <div id="generatorCod">
+                <form action="#" id="generatorCodForm">
+                    <input type="button" onClick="afiseazaCod();" id="butonGenereazaCod" value="Genereaza Cod">
+                    <input type="text" id="campCodGenerat" readonly>
+                    <button id="trimiteConf" type="button" onClick="apasaTrimiteConfiguratia()">Trimite configuratia</button> 
+                </form>
+            </div>
+        </div>
+        <div id="dreapta">
+            <div id="titluConfigurator">
+                <h2>Configurator interior cabina</h2>
+            </div>
+            <div id="optiuniCat1">
+            </div>
+            <div id="optiuniCat2">
+            </div>
+            <div id="optiuniCat3">
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="javascript.js"></script>
+</body>
+</html>

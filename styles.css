@@ -1,0 +1,1114 @@
+body * {
+    box-sizing:border-box;
+    font-family: 'Open Sans';
+}
+
+/* .optiuneCat3, .optiuneCat2, .optiuneCat1 {
+    overflow:hidden;
+    white-space:nowrap;
+    animation-name: caca;
+    animation-duration: 0.25s;
+} */
+
+@keyframes caca {
+    0% {width:0%;}
+    100% {width:100%;}
+}
+
+h5, h4 {
+    margin:0;
+    border: 1px #ccc solid;
+    min-height: 46px;
+    cursor:pointer;
+    display:grid;
+    align-items:center;
+}
+h4 {
+    /* Pentru mobil la Plafon->S01 si WL10 sa arate frumos */
+    padding: 0 2px;
+}
+
+h4:hover, h5:hover {
+    border: 1px #000 solid;
+}
+
+h5, h4, h3, h2 {
+    text-align:center;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    color: #333;
+}
+
+h2 {
+    margin: 0 auto;
+}
+
+#liftContainer {
+    display:grid;
+    grid-template-columns: [col1] 2fr [col2] 3fr [col3];
+    /* grid-template-rows: [row1] 1fr [row2] 1fr [row3] 1fr [row4] 1fr [row5] 1fr [row6] 1fr [row7] 1fr [row8] 1fr [row9]; */
+    width:95vw;
+    /* height: 100%; */
+    grid-gap:10px;
+    margin: 0 auto;
+}
+
+@media (min-width:360px) and (max-width:667px) {
+    #optiuniCat3 {
+        grid-template-columns: repeat(auto-fit,minMax(25px, 104px)) !important;
+    }
+}
+
+@media screen and (max-width:699px) {
+    h5 {
+        font-size: 11px;
+    }
+    h4 { 
+        font-size:14px;
+    }
+    h3 {
+        font-size:16px;
+    }
+    h2 {
+        font-size:24px;
+    }
+
+    #liftContainer {
+        display:grid;
+        grid-template-columns: none;
+        height:100%;
+        max-width:100%;
+        grid-template-rows: min-content;
+        /* padding-right:4px; */
+        width:100%;
+    }
+    #dreapta {
+        grid-column-start: unset !important;
+        grid-column-end: unset !important;
+    }
+    #stanga {
+        grid-column-start: unset !important;
+        grid-column-end: unset !important;
+        grid-gap:0;
+    }
+    #butonGenereazaCod {
+        font-size:14px !important;
+    }
+
+}
+
+#stanga {
+    grid-column-start: col1;
+    grid-column-end: col2;
+    /* grid-row-start: row1; */
+    /* grid-row-end: row9; */
+    border: 1px solid blue;
+    display:grid;
+    grid-template-columns: [col1] 1fr [col2];
+    grid-template-rows: repeat(2, minMax(min-content, max-content));
+    grid-gap: 15px;
+    text-align:center;
+    padding: 10px;
+}
+
+#poza {
+    grid-column-start: col1;
+    grid-column-end: col2;
+    /* grid-row-start: row2; */
+    /* grid-row-end: row8; */
+    /* border:1px solid green; */
+    display:grid;
+    justify-items:center;
+    align-items:center;
+    position:relative;
+    border-top: 1px dashed darkgray;
+}
+
+#titluPoza {
+    grid-column-start: col1;
+    grid-column-end: col2;
+    /* grid-row-start: row1; */
+    /* grid-row-end: row2; */
+    /* border:1px solid pink; */
+    display:grid;
+    align-items: center;
+}
+
+#generatorCod {
+    display:grid;
+    grid-column-start: col1;
+    grid-column-end: col2;
+    /* grid-row-start:row8; */
+    /* grid-row-end:row9; */
+    /* border:1px solid brown; */
+    align-items:end;
+    text-align:center;
+}
+
+#titluConfigurator {
+    grid-column-start: col1;
+    grid-column-end: col2;
+    /* border: 1px solid purple; */
+    display:grid;
+    align-items:center;
+}
+
+#dreapta {
+    grid-column-start: col2;
+    grid-column-end: col3;
+    /* border:1px solid blue; */
+    display:grid;
+    grid-template-columns: [col1] 1fr [col2];
+    grid-template-rows: repeat(4, minMax(min-content, max-content));
+    grid-row-gap: 15px;
+    border: 1px solid #000;
+    padding: 10px;
+}
+
+
+
+#optiuniCat1 {
+    grid-column-start: col1;
+    grid-column-end: col2;
+    /* border: 1px solid orange; */
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap:5px;
+    align-items:center;
+    padding-top: 25px;
+    padding-bottom: 10px;
+    border-top: 1px dashed darkgray;
+}
+
+#optiuniCat2 {
+    grid-column-start: col1;
+    grid-column-end: col2;
+    /* border: 1px solid cyan; */
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: min-content;
+    align-items:center;
+    grid-gap:5px;
+    padding-top: 25px;
+    padding-bottom: 15px;
+    border-top: 1px dashed darkgray;
+}
+
+#optiuniCat3 {
+    grid-column-start: col1;
+    grid-column-end: col2;
+    /* border: 1px solid green; */
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minMax(25px, 135px));
+    grid-template-rows: min-content;
+    align-items:center;
+    grid-gap:5px;
+    padding-top: 25px;
+    padding-bottom: 15px;
+    border-top: 1px dashed darkgray;
+}
+
+#generatorCodForm {
+    display:grid;
+    grid-template-columns: [col1] 1fr [col2] 3fr [col3];
+    /* grid-template-rows: [row1] 1fr [row2] 1fr [row3] 1fr [row4] 1fr [row5] 1fr [row6] 1fr [row7] 1fr [row8] 1fr [row9]; */
+    height:75px;
+}
+
+#butonGenereazaCod {
+    /* grid-column-start: col1;
+    grid-column-end: col2;
+    grid-row-start:row1;
+    grid-row-end:row5; */
+    border: 1px solid gray;
+    font-size:15px;
+    padding:0;
+}
+#butonGenereazaCod:hover {
+    background:#ccc;
+}
+#campCodGenerat {
+    /* grid-column-start: col2;
+    grid-column-end: col5;
+    grid-row-start:row1;
+    grid-row-end:row5; */
+    border: 1px solid gray;
+    border-left:none;
+    box-shadow:none;
+    padding: 0 10px;
+    font-size:13px;
+    font-weight:400;
+    text-align:center;
+}
+
+#trimiteConf {
+    grid-column-start: col1;
+    grid-column-end: col3;
+    /* grid-row-start:row5;
+    grid-row-end: row9; */
+    border: 1px solid gray;
+    border-top:none;
+    font-size:15px;
+}
+#trimiteConf:hover {
+    background:#ccc;
+}
+.butonApasat, .butonApasat:hover {
+    color:red;
+    border: 2px #000 solid;
+}
+
+#Baza {
+    max-width:77% !important;
+    padding-top:26px;
+    position:relative;
+    z-index:10;
+}
+
+.kuku {
+    max-width:77% !important;
+    padding-top:26px;
+    position: absolute;
+    /* left: 12.5%;
+    top: 0; */
+    /* margin-top:-22px; */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.optiuneCat3.S01-C1L01:after {
+    content: url(imagini/Thumbs/Plafon/S01/C1L01.png)
+}
+.optiuneCat3.S01-C1L02:after {
+    content: url(imagini/Thumbs/Plafon/S01/C1L02.png)
+}
+.optiuneCat3.S01-C1L03:after {
+    content: url(imagini/Thumbs/Plafon/S01/C1L03.png)
+}
+.optiuneCat3.S01-C1L04:after {
+    content: url(imagini/Thumbs/Plafon/S01/C1L04.png)
+}
+.optiuneCat3.S01-C1L05:after {
+    content: url(imagini/Thumbs/Plafon/S01/C1L05.png)
+}
+.optiuneCat3.S01-C1L06:after {
+    content: url(imagini/Thumbs/Plafon/S01/C1L06.png)
+}
+.optiuneCat3.S01-C2L01:after {
+    content: url(imagini/Thumbs/Plafon/S01/C2L01.png)
+}
+.optiuneCat3.S01-C2L02:after {
+    content: url(imagini/Thumbs/Plafon/S01/C2L02.png)
+}
+.optiuneCat3.S01-C2L03:after {
+    content: url(imagini/Thumbs/Plafon/S01/C2L03.png)
+}
+.optiuneCat3.S01-C2L04:after {
+    content: url(imagini/Thumbs/Plafon/S01/C2L04.png)
+}
+.optiuneCat3.S01-C2L05:after {
+    content: url(imagini/Thumbs/Plafon/S01/C2L05.png)
+}
+.optiuneCat3.S01-C2L06:after {
+    content: url(imagini/Thumbs/Plafon/S01/C2L06.png)
+}
+.optiuneCat3.S01-C3L01:after {
+    content: url(imagini/Thumbs/Plafon/S01/C3L01.png)
+}
+.optiuneCat3.S01-C3L02:after {
+    content: url(imagini/Thumbs/Plafon/S01/C3L02.png)
+}
+.optiuneCat3.S01-C3L03:after {
+    content: url(imagini/Thumbs/Plafon/S01/C3L03.png)
+}
+.optiuneCat3.S01-C3L04:after {
+    content: url(imagini/Thumbs/Plafon/S01/C3L04.png)
+}
+.optiuneCat3.S01-C4L01:after {
+    content: url(imagini/Thumbs/Plafon/S01/C4L01.png)
+}
+.optiuneCat3.S01-C4L02:after {
+    content: url(imagini/Thumbs/Plafon/S01/C4L02.png)
+}
+.optiuneCat3.S01-C4L03:after {
+    content: url(imagini/Thumbs/Plafon/S01/C4L03.png)
+}
+.optiuneCat3.S01-C4L04:after {
+    content: url(imagini/Thumbs/Plafon/S01/C4L04.png)
+}
+.optiuneCat3.S01-C5L01:after {
+    content: url(imagini/Thumbs/Plafon/S01/C5L01.png)
+}
+.optiuneCat3.S01-C5L02:after {
+    content: url(imagini/Thumbs/Plafon/S01/C5L02.png)
+}
+.optiuneCat3.S01-C5L03:after {
+    content: url(imagini/Thumbs/Plafon/S01/C5L03.png)
+}
+.optiuneCat3.S01-C5L04:after {
+    content: url(imagini/Thumbs/Plafon/S01/C5L04.png)
+}
+.optiuneCat3.S01-C5L05:after {
+    content: url(imagini/Thumbs/Plafon/S01/C5L05.png)
+}
+.optiuneCat3.S01-C6L06:after {
+    content: url(imagini/Thumbs/Plafon/S01/C6L06.png)
+}
+
+
+
+.optiuneCat3.S01siWL10-C6L01:after {
+    content: url(imagini/Thumbs/Plafon/S01siWL10/C6L01.png)
+}
+.optiuneCat3.S01siWL10-C6L02:after {
+    content: url(imagini/Thumbs/Plafon/S01siWL10/C6L02.png)
+}
+.optiuneCat3.S01siWL10-C6L03:after {
+    content: url(imagini/Thumbs/Plafon/S01siWL10/C6L03.png)
+}
+.optiuneCat3.S01siWL10-C6L04:after {
+    content: url(imagini/Thumbs/Plafon/S01siWL10/C6L04.png)
+}
+.optiuneCat3.S01siWL10-C6L05:after {
+    content: url(imagini/Thumbs/Plafon/S01siWL10/C6L05.png)
+}
+
+
+
+.optiuneCat3.S03-C1L01:after {
+    content: url(imagini/Thumbs/Plafon/S03/C1L01.png)
+}
+.optiuneCat3.S03-C1L02:after {
+    content: url(imagini/Thumbs/Plafon/S03/C1L02.png)
+}
+.optiuneCat3.S03-C1L03:after {
+    content: url(imagini/Thumbs/Plafon/S03/C1L03.png)
+}
+.optiuneCat3.S03-C1L04:after {
+    content: url(imagini/Thumbs/Plafon/S03/C1L04.png)
+}
+.optiuneCat3.S03-C1L05:after {
+    content: url(imagini/Thumbs/Plafon/S03/C1L05.png)
+}
+.optiuneCat3.S03-C1L06:after {
+    content: url(imagini/Thumbs/Plafon/S03/C1L06.png)
+}
+.optiuneCat3.S03-C2L01:after {
+    content: url(imagini/Thumbs/Plafon/S03/C2L01.png)
+}
+.optiuneCat3.S03-C2L02:after {
+    content: url(imagini/Thumbs/Plafon/S03/C2L02.png)
+}
+.optiuneCat3.S03-C2L03:after {
+    content: url(imagini/Thumbs/Plafon/S03/C2L03.png)
+}
+.optiuneCat3.S03-C2L04:after {
+    content: url(imagini/Thumbs/Plafon/S03/C2L04.png)
+}
+.optiuneCat3.S03-C2L05:after {
+    content: url(imagini/Thumbs/Plafon/S03/C2L05.png)
+}
+.optiuneCat3.S03-C2L06:after {
+    content: url(imagini/Thumbs/Plafon/S03/C2L06.png)
+}
+.optiuneCat3.S03-C3L01:after {
+    content: url(imagini/Thumbs/Plafon/S03/C3L01.png)
+}
+.optiuneCat3.S03-C3L02:after {
+    content: url(imagini/Thumbs/Plafon/S03/C3L02.png)
+}
+.optiuneCat3.S03-C3L03:after {
+    content: url(imagini/Thumbs/Plafon/S03/C3L03.png)
+}
+.optiuneCat3.S03-C3L04:after {
+    content: url(imagini/Thumbs/Plafon/S03/C3L04.png)
+}
+.optiuneCat3.S03-C4L01:after {
+    content: url(imagini/Thumbs/Plafon/S03/C4L01.png)
+}
+.optiuneCat3.S03-C4L02:after {
+    content: url(imagini/Thumbs/Plafon/S03/C4L02.png)
+}
+.optiuneCat3.S03-C4L03:after {
+    content: url(imagini/Thumbs/Plafon/S03/C4L03.png)
+}
+.optiuneCat3.S03-C4L04:after {
+    content: url(imagini/Thumbs/Plafon/S03/C4L04.png)
+}
+.optiuneCat3.S03-C5L01:after {
+    content: url(imagini/Thumbs/Plafon/S03/C5L01.png)
+}
+.optiuneCat3.S03-C5L02:after {
+    content: url(imagini/Thumbs/Plafon/S03/C5L02.png)
+}
+.optiuneCat3.S03-C5L03:after {
+    content: url(imagini/Thumbs/Plafon/S03/C5L03.png)
+}
+.optiuneCat3.S03-C6L06:after {
+    content: url(imagini/Thumbs/Plafon/S03/C6L06.png)
+}
+
+
+
+.optiuneCat3.S03siWL10-C6L01:after {
+    content: url(imagini/Thumbs/Plafon/S03siWL10/C6L01.png)
+}
+.optiuneCat3.S03siWL10-C6L02:after {
+    content: url(imagini/Thumbs/Plafon/S03siWL10/C6L02.png)
+}
+.optiuneCat3.S03siWL10-C6L03:after {
+    content: url(imagini/Thumbs/Plafon/S03siWL10/C6L03.png)
+}
+.optiuneCat3.S03siWL10-C6L04:after {
+    content: url(imagini/Thumbs/Plafon/S03siWL10/C6L04.png)
+}
+.optiuneCat3.S03siWL10-C6L05:after {
+    content: url(imagini/Thumbs/Plafon/S03siWL10/C6L05.png)
+}
+
+
+
+
+.optiuneCat3.S05-C1L01:after {
+    content: url(imagini/Thumbs/Plafon/S05/C1L01.png)
+}
+.optiuneCat3.S05-C1L02:after {
+    content: url(imagini/Thumbs/Plafon/S05/C1L02.png)
+}
+.optiuneCat3.S05-C1L03:after {
+    content: url(imagini/Thumbs/Plafon/S05/C1L03.png)
+}
+.optiuneCat3.S05-C1L04:after {
+    content: url(imagini/Thumbs/Plafon/S05/C1L04.png)
+}
+.optiuneCat3.S05-C1L05:after {
+    content: url(imagini/Thumbs/Plafon/S05/C1L05.png)
+}
+.optiuneCat3.S05-C1L06:after {
+    content: url(imagini/Thumbs/Plafon/S05/C1L06.png)
+}
+.optiuneCat3.S05-C2L01:after {
+    content: url(imagini/Thumbs/Plafon/S05/C2L01.png)
+}
+.optiuneCat3.S05-C2L02:after {
+    content: url(imagini/Thumbs/Plafon/S05/C2L02.png)
+}
+.optiuneCat3.S05-C2L03:after {
+    content: url(imagini/Thumbs/Plafon/S05/C2L03.png)
+}
+.optiuneCat3.S05-C2L04:after {
+    content: url(imagini/Thumbs/Plafon/S05/C2L04.png)
+}
+.optiuneCat3.S05-C2L05:after {
+    content: url(imagini/Thumbs/Plafon/S05/C2L05.png)
+}
+.optiuneCat3.S05-C2L06:after {
+    content: url(imagini/Thumbs/Plafon/S05/C2L06.png)
+}
+.optiuneCat3.S05-C3L01:after {
+    content: url(imagini/Thumbs/Plafon/S05/C3L01.png)
+}
+.optiuneCat3.S05-C3L02:after {
+    content: url(imagini/Thumbs/Plafon/S05/C3L02.png)
+}
+.optiuneCat3.S05-C3L03:after {
+    content: url(imagini/Thumbs/Plafon/S05/C3L03.png)
+}
+.optiuneCat3.S05-C3L04:after {
+    content: url(imagini/Thumbs/Plafon/S05/C3L04.png)
+}
+.optiuneCat3.S05-C4L01:after {
+    content: url(imagini/Thumbs/Plafon/S05/C4L01.png)
+}
+.optiuneCat3.S05-C4L02:after {
+    content: url(imagini/Thumbs/Plafon/S05/C4L02.png)
+}
+.optiuneCat3.S05-C4L03:after {
+    content: url(imagini/Thumbs/Plafon/S05/C4L03.png)
+}
+.optiuneCat3.S05-C4L04:after {
+    content: url(imagini/Thumbs/Plafon/S05/C4L04.png)
+}
+.optiuneCat3.S05-C5L01:after {
+    content: url(imagini/Thumbs/Plafon/S05/C5L01.png)
+}
+.optiuneCat3.S05-C5L02:after {
+    content: url(imagini/Thumbs/Plafon/S05/C5L02.png)
+}
+.optiuneCat3.S05-C5L03:after {
+    content: url(imagini/Thumbs/Plafon/S05/C5L03.png)
+}
+.optiuneCat3.S05-C6L06:after {
+    content: url(imagini/Thumbs/Plafon/S05/C6L06.png)
+}
+
+
+
+.optiuneCat3.S05siWL10-C6L01:after {
+    content: url(imagini/Thumbs/Plafon/S05siWL10/C6L01.png)
+}
+.optiuneCat3.S05siWL10-C6L02:after {
+    content: url(imagini/Thumbs/Plafon/S05siWL10/C6L02.png)
+}
+.optiuneCat3.S05siWL10-C6L03:after {
+    content: url(imagini/Thumbs/Plafon/S05siWL10/C6L03.png)
+}
+.optiuneCat3.S05siWL10-C6L04:after {
+    content: url(imagini/Thumbs/Plafon/S05siWL10/C6L04.png)
+}
+.optiuneCat3.S05siWL10-C6L05:after {
+    content: url(imagini/Thumbs/Plafon/S05siWL10/C6L05.png)
+}
+
+
+
+.optiuneCat3.WL10-C1L01:after {
+    content: url(imagini/Thumbs/Plafon/WL10/C1L01.png)
+}
+.optiuneCat3.WL10-C1L02:after {
+    content: url(imagini/Thumbs/Plafon/WL10/C1L02.png)
+}
+.optiuneCat3.WL10-C1L03:after {
+    content: url(imagini/Thumbs/Plafon/WL10/C1L03.png)
+}
+.optiuneCat3.WL10-C1L04:after {
+    content: url(imagini/Thumbs/Plafon/WL10/C1L04.png)
+}
+.optiuneCat3.WL10-C1L05:after {
+    content: url(imagini/Thumbs/Plafon/WL10/C1L05.png)
+}
+.optiuneCat3.WL10-C1L06:after {
+    content: url(imagini/Thumbs/Plafon/WL10/C1L06.png)
+}
+.optiuneCat3.WL10-C3L01:after {
+    content: url(imagini/Thumbs/Plafon/WL10/C3L01.png)
+}
+.optiuneCat3.WL10-C3L02:after {
+    content: url(imagini/Thumbs/Plafon/WL10/C3L02.png)
+}
+.optiuneCat3.WL10-C3L03:after {
+    content: url(imagini/Thumbs/Plafon/WL10/C3L03.png)
+}
+.optiuneCat3.WL10-C3L04:after {
+    content: url(imagini/Thumbs/Plafon/WL10/C3L04.png)
+}
+.optiuneCat3.WL10-C5L01:after {
+    content: url(imagini/Thumbs/Plafon/WL10/C5L01.png)
+}
+.optiuneCat3.WL10-C5L02:after {
+    content: url(imagini/Thumbs/Plafon/WL10/C5L02.png)
+}
+.optiuneCat3.WL10-C5L03:after {
+    content: url(imagini/Thumbs/Plafon/WL10/C5L03.png)
+}
+
+
+
+.optiuneCat3.WL11-C1L01:after {
+    content: url(imagini/Thumbs/Plafon/WL11/C1L01.png)
+}
+.optiuneCat3.WL11-C1L02:after {
+    content: url(imagini/Thumbs/Plafon/WL11/C1L02.png)
+}
+.optiuneCat3.WL11-C1L03:after {
+    content: url(imagini/Thumbs/Plafon/WL11/C1L03.png)
+}
+.optiuneCat3.WL11-C1L04:after {
+    content: url(imagini/Thumbs/Plafon/WL11/C1L04.png)
+}
+.optiuneCat3.WL11-C1L05:after {
+    content: url(imagini/Thumbs/Plafon/WL11/C1L05.png)
+}
+.optiuneCat3.WL11-C6L06:after {
+    content: url(imagini/Thumbs/Plafon/WL11/C6L06.png)
+}
+.optiuneCat3.WL11-C3L01:after {
+    content: url(imagini/Thumbs/Plafon/WL11/C3L01.png)
+}
+.optiuneCat3.WL11-C3L02:after {
+    content: url(imagini/Thumbs/Plafon/WL11/C3L02.png)
+}
+.optiuneCat3.WL11-C3L03:after {
+    content: url(imagini/Thumbs/Plafon/WL11/C3L03.png)
+}
+.optiuneCat3.WL11-C3L04:after {
+    content: url(imagini/Thumbs/Plafon/WL11/C3L04.png)
+}
+.optiuneCat3.WL11-C5L01:after {
+    content: url(imagini/Thumbs/Plafon/WL11/C5L01.png)
+}
+.optiuneCat3.WL11-C5L02:after {
+    content: url(imagini/Thumbs/Plafon/WL11/C5L02.png)
+}
+.optiuneCat3.WL11-C5L03:after {
+    content: url(imagini/Thumbs/Plafon/WL11/C5L03.png)
+}
+
+.optiuneCat2.Oglinda-M01:after {
+    content: url(imagini/Thumbs/Oglinda/_0000_M01.png.png)
+}
+.optiuneCat2.Oglinda-M02:after {
+    content: url(imagini/Thumbs/Oglinda/_0001_M02.png.png)
+}
+.optiuneCat2.Oglinda-M03:after {
+    content: url(imagini/Thumbs/Oglinda/_0002_M03.png.png)
+}
+.optiuneCat2.Oglinda-M04:after {
+    content: url(imagini/Thumbs/Oglinda/_0003_M04.png.png)
+}
+
+
+.optiuneCat2.Semnalizari-FTSW:after {
+    content: url(imagini/Thumbs/Semnalizari/FTSW.png)
+}
+.optiuneCat2.Semnalizari-FTSB:after {
+    content: url(imagini/Thumbs/Semnalizari/FTSB.png)
+}
+.optiuneCat2.Semnalizari-FTSW:after {
+    content: url(imagini/Thumbs/Semnalizari/FTSW.png)
+}
+.optiuneCat2.Semnalizari-FPBB:after {
+    content: url(imagini/Thumbs/Semnalizari/FPBB.png)
+}
+.optiuneCat2.Semnalizari-PSPW1:after {
+    content: url(imagini/Thumbs/Semnalizari/PSPW1.png)
+}
+.optiuneCat2.Semnalizari-PSPB1:after {
+    content: url(imagini/Thumbs/Semnalizari/PSPB1.png)
+}
+.optiuneCat2.Semnalizari-PSPW2:after {
+    content: url(imagini/Thumbs/Semnalizari/PSPW2.png)
+}
+.optiuneCat2.Semnalizari-PSPB2:after {
+    content: url(imagini/Thumbs/Semnalizari/PSPB2.png)
+}
+.optiuneCat2.Semnalizari-COP1:after {
+    content: url(imagini/Thumbs/Semnalizari/COP1.png)
+}
+.optiuneCat2.Semnalizari-COP2:after {
+    content: url(imagini/Thumbs/Semnalizari/COP2.png)
+}
+.optiuneCat2.Semnalizari-COP3:after {
+    content: url(imagini/Thumbs/Semnalizari/COP3.png)
+}
+
+
+
+.VariantaScurta-H01Scurta:after {
+    content: url(imagini/Thumbs/ManaCurenta/VariantaScurta/H01Scurta.png)
+}
+.VariantaScurta-H02Scurta:after  {
+    content: url(imagini/Thumbs/ManaCurenta/VariantaScurta/H02Scurta.png)
+}
+.VariantaScurta-H03Scurta:after  {
+    content: url(imagini/Thumbs/ManaCurenta/VariantaScurta/H03Scurta.png)
+}
+.VariantaScurta-H04Scurta:after  {
+    content: url(imagini/Thumbs/ManaCurenta/VariantaScurta/H04Scurta.png)
+}
+.VariantaLunga-H01Lunga:after {
+    content: url(imagini/Thumbs/ManaCurenta/VariantaLunga/H01Lunga.png)
+}
+.VariantaLunga-H02Lunga:after {
+    content: url(imagini/Thumbs/ManaCurenta/VariantaLunga/H02Lunga.png)
+}
+.VariantaLunga-H03Lunga:after {
+    content: url(imagini/Thumbs/ManaCurenta/VariantaLunga/H03Lunga.png)
+}
+.VariantaLunga-H04Lunga:after {
+    content: url(imagini/Thumbs/ManaCurenta/VariantaLunga/H04Lunga.png)
+}
+.S1-S01\.H05:after {
+    content: url(imagini/Thumbs/ManaCurenta/S1/S01.H05.png)
+}
+.S5-S05\.H05:after {
+    content: url(imagini/Thumbs/ManaCurenta/S5/S05.H05.png)
+}
+
+.Plinta-S-01:after {
+    content: url(imagini/Thumbs/Plinta/S-01.png)
+}
+.Plinta-S-03:after {
+    content: url(imagini/Thumbs/Plinta/S-03.png)
+}
+.Plinta-S-05:after {
+    content: url(imagini/Thumbs/Plinta/S-05.png)
+}
+.Plinta-S-07:after {
+    content: url(imagini/Thumbs/Plinta/S-07.png)
+}
+
+.Vinyl-FV01:after {
+    content: url(imagini/Thumbs/Podea/Vinyl/FV01.png)
+}
+.Vinyl-FV02:after {
+    content: url(imagini/Thumbs/Podea/Vinyl/FV02.png)
+}
+.Vinyl-FV03:after {
+    content: url(imagini/Thumbs/Podea/Vinyl/FV03.png)
+}
+.Vinyl-FV04:after {
+    content: url(imagini/Thumbs/Podea/Vinyl/FV04.png)
+}
+.Vinyl-FV05:after {
+    content: url(imagini/Thumbs/Podea/Vinyl/FV05.png)
+}
+.Vinyl-FV06:after {
+    content: url(imagini/Thumbs/Podea/Vinyl/FV06.png)
+}
+.Vinyl-FV07:after {
+    content: url(imagini/Thumbs/Podea/Vinyl/FV07.png)
+}
+.Vinyl-FV08:after {
+    content: url(imagini/Thumbs/Podea/Vinyl/FV08.png)
+}
+.Vinyl-FV09:after {
+    content: url(imagini/Thumbs/Podea/Vinyl/FV09.png)
+}
+.Vinyl-FV10:after {
+    content: url(imagini/Thumbs/Podea/Vinyl/FV10.png)
+}
+
+.Piatra-FS01:after {
+    content: url(imagini/Thumbs/Podea/Piatra/FS01.png)
+}
+.Piatra-FS02:after {
+    content: url(imagini/Thumbs/Podea/Piatra/FS02.png)
+}
+.Piatra-FS03:after {
+    content: url(imagini/Thumbs/Podea/Piatra/FS03.png)
+}
+.Piatra-FS04:after {
+    content: url(imagini/Thumbs/Podea/Piatra/FS04.png)
+}
+.Piatra-FS05:after {
+    content: url(imagini/Thumbs/Podea/Piatra/FS05.png)
+}
+.Piatra-FS06:after {
+    content: url(imagini/Thumbs/Podea/Piatra/FS06.png)
+}
+.Piatra-FS07:after {
+    content: url(imagini/Thumbs/Podea/Piatra/FS07.png)
+}
+.Piatra-FS08:after {
+    content: url(imagini/Thumbs/Podea/Piatra/FS08.png)
+}
+.Piatra-FS09:after {
+    content: url(imagini/Thumbs/Podea/Piatra/FS09.png)
+}
+.Piatra-FS10:after {
+    content: url(imagini/Thumbs/Podea/Piatra/FS10.png)
+}
+.AluminiuStriat-FM01:after {
+    content: url(imagini/Thumbs/Podea/AluminiuStriat/FM01.png)
+}
+.Cauciuc-FR01:after {
+    content: url(imagini/Thumbs/Podea/Cauciuc/FR01.png)
+}
+
+
+
+.SticlaPictata-PG01:after {
+    content: url(imagini/Thumbs/Pereti/SticlaPictata/PG01.png)
+}
+.SticlaPictata-PG02:after {
+    content: url(imagini/Thumbs/Pereti/SticlaPictata/PG02.png)
+}
+.SticlaPictata-PG03:after {
+    content: url(imagini/Thumbs/Pereti/SticlaPictata/PG03.png)
+}
+.SticlaPictata-PG04:after {
+    content: url(imagini/Thumbs/Pereti/SticlaPictata/PG04.png)
+}
+.SticlaPictata-PG05:after {
+    content: url(imagini/Thumbs/Pereti/SticlaPictata/PG05.png)
+}
+.SticlaPictata-PG06:after {
+    content: url(imagini/Thumbs/Pereti/SticlaPictata/PG06.png)
+}
+.SticlaPictata-PG07:after {
+    content: url(imagini/Thumbs/Pereti/SticlaPictata/PG07.png)
+}
+.SticlaPictata-PG08:after {
+    content: url(imagini/Thumbs/Pereti/SticlaPictata/PG08.png)
+}
+.SticlaPictata-PG09:after {
+    content: url(imagini/Thumbs/Pereti/SticlaPictata/PG09.png)
+}
+.SticlaPictata-PG10:after {
+    content: url(imagini/Thumbs/Pereti/SticlaPictata/PG10.png)
+}
+
+.OtelVopsit-CS01:after {
+    content: url(imagini/Thumbs/Pereti/OtelVopsit/CS01.png)
+}
+.OtelVopsit-CS02:after {
+    content: url(imagini/Thumbs/Pereti/OtelVopsit/CS02.png)
+}
+.OtelVopsit-CS03:after {
+    content: url(imagini/Thumbs/Pereti/OtelVopsit/CS03.png)
+}
+.OtelVopsit-CS04:after {
+    content: url(imagini/Thumbs/Pereti/OtelVopsit/CS04.png)
+}
+.OtelVopsit-CS05:after {
+    content: url(imagini/Thumbs/Pereti/OtelVopsit/CS05.png)
+}
+.OtelVopsit-CS06:after {
+    content: url(imagini/Thumbs/Pereti/OtelVopsit/CS06.png)
+}
+.OtelVopsit-CS07:after {
+    content: url(imagini/Thumbs/Pereti/OtelVopsit/CS07.png)
+}
+.OtelVopsit-CS08:after {
+    content: url(imagini/Thumbs/Pereti/OtelVopsit/CS08.png)
+}
+.OtelVopsit-CS09:after {
+    content: url(imagini/Thumbs/Pereti/OtelVopsit/CS09.png)
+}
+.OtelVopsit-CS10:after {
+    content: url(imagini/Thumbs/Pereti/OtelVopsit/CS10.png)
+}
+
+.OtelPlastifiat-LS01:after {
+    content: url(imagini/Thumbs/Pereti/OtelPlastifiat/LS01.png)
+}
+.OtelPlastifiat-LS02:after {
+    content: url(imagini/Thumbs/Pereti/OtelPlastifiat/LS02.png)
+}
+.OtelPlastifiat-LS03:after {
+    content: url(imagini/Thumbs/Pereti/OtelPlastifiat/LS03.png)
+}
+.OtelPlastifiat-LS04:after {
+    content: url(imagini/Thumbs/Pereti/OtelPlastifiat/LS04.png)
+}
+.OtelPlastifiat-LS05:after {
+    content: url(imagini/Thumbs/Pereti/OtelPlastifiat/LS05.png)
+}
+.OtelPlastifiat-LS06:after {
+    content: url(imagini/Thumbs/Pereti/OtelPlastifiat/LS06.png)
+}
+.OtelPlastifiat-LS07:after {
+    content: url(imagini/Thumbs/Pereti/OtelPlastifiat/LS07.png)
+}
+.OtelPlastifiat-LS08:after {
+    content: url(imagini/Thumbs/Pereti/OtelPlastifiat/LS08.png)
+}
+.OtelPlastifiat-LS09:after {
+    content: url(imagini/Thumbs/Pereti/OtelPlastifiat/LS09.png)
+}
+.OtelPlastifiat-LS10:after {
+    content: url(imagini/Thumbs/Pereti/OtelPlastifiat/LS10.png)
+}
+
+.OtelPlastifiatTexturaLemn-LSW01:after {
+    content: url(imagini/Thumbs/Pereti/OtelPlastifiatTexturaLemn/LSW01.png)
+}
+.OtelPlastifiatTexturaLemn-LSW02:after {
+    content: url(imagini/Thumbs/Pereti/OtelPlastifiatTexturaLemn/LSW02.png)
+}
+.OtelPlastifiatTexturaLemn-LSW03:after {
+    content: url(imagini/Thumbs/Pereti/OtelPlastifiatTexturaLemn/LSW03.png)
+}
+.OtelPlastifiatTexturaLemn-LSW04:after {
+    content: url(imagini/Thumbs/Pereti/OtelPlastifiatTexturaLemn/LSW04.png)
+}
+.OtelPlastifiatTexturaLemn-LSW05:after {
+    content: url(imagini/Thumbs/Pereti/OtelPlastifiatTexturaLemn/LSW05.png)
+}
+.OtelPlastifiatTexturaLemn-LSW06:after {
+    content: url(imagini/Thumbs/Pereti/OtelPlastifiatTexturaLemn/LSW06.png)
+}
+.OtelPlastifiatTexturaLemn-LSW07:after {
+    content: url(imagini/Thumbs/Pereti/OtelPlastifiatTexturaLemn/LSW07.png)
+}
+.OtelPlastifiatTexturaLemn-LSW08:after {
+    content: url(imagini/Thumbs/Pereti/OtelPlastifiatTexturaLemn/LSW08.png)
+}
+.OtelPlastifiatTexturaLemn-LSW09:after {
+    content: url(imagini/Thumbs/Pereti/OtelPlastifiatTexturaLemn/LSW09.png)
+}
+.OtelPlastifiatTexturaLemn-LSW10:after {
+    content: url(imagini/Thumbs/Pereti/OtelPlastifiatTexturaLemn/LSW10.png)
+}
+
+.PALMelaminatTexturaLemn-WL01:after {
+    content: url(imagini/Thumbs/Pereti/PALMelaminatTexturaLemn/WL01.png)
+}
+.PALMelaminatTexturaLemn-WL02:after {
+    content: url(imagini/Thumbs/Pereti/PALMelaminatTexturaLemn/WL02.png)
+}
+.PALMelaminatTexturaLemn-WL03:after {
+    content: url(imagini/Thumbs/Pereti/PALMelaminatTexturaLemn/WL03.png)
+}
+.PALMelaminatTexturaLemn-WL04:after {
+    content: url(imagini/Thumbs/Pereti/PALMelaminatTexturaLemn/WL04.png)
+}
+.PALMelaminatTexturaLemn-WL05:after {
+    content: url(imagini/Thumbs/Pereti/PALMelaminatTexturaLemn/WL05.png)
+}
+.PALMelaminatTexturaLemn-WL06:after {
+    content: url(imagini/Thumbs/Pereti/PALMelaminatTexturaLemn/WL06.png)
+}
+.PALMelaminatTexturaLemn-WL07:after {
+    content: url(imagini/Thumbs/Pereti/PALMelaminatTexturaLemn/WL07.png)
+}
+.PALMelaminatTexturaLemn-WL08:after {
+    content: url(imagini/Thumbs/Pereti/PALMelaminatTexturaLemn/WL08.png)
+}
+.PALMelaminatTexturaLemn-WL09:after {
+    content: url(imagini/Thumbs/Pereti/PALMelaminatTexturaLemn/WL09.png)
+}
+
+.MDFFurniruitNatur-RW01:after {
+    content: url(imagini/Thumbs/Pereti/MDFFurniruitNatur/RW01.png)
+}
+.MDFFurniruitNatur-RW02:after {
+    content: url(imagini/Thumbs/Pereti/MDFFurniruitNatur/RW02.png)
+}
+.MDFFurniruitNatur-RW03:after {
+    content: url(imagini/Thumbs/Pereti/MDFFurniruitNatur/RW03.png)
+}
+.MDFFurniruitNatur-RW04:after {
+    content: url(imagini/Thumbs/Pereti/MDFFurniruitNatur/RW04.png)
+}
+.MDFFurniruitNatur-RW05:after {
+    content: url(imagini/Thumbs/Pereti/MDFFurniruitNatur/RW05.png)
+}
+.MDFFurniruitNatur-RW06:after {
+    content: url(imagini/Thumbs/Pereti/MDFFurniruitNatur/RW06.png)
+}
+.MDFFurniruitNatur-RW07:after {
+    content: url(imagini/Thumbs/Pereti/MDFFurniruitNatur/RW07.png)
+}
+.MDFFurniruitNatur-RW08:after {
+    content: url(imagini/Thumbs/Pereti/MDFFurniruitNatur/RW08.png)
+}
+
+.OtelInoxPeriat-S01:after {
+    content: url(imagini/Thumbs/Pereti/OtelInoxPeriat/S01.png)
+}
+.OtelInoxPeriat-S02:after {
+    content: url(imagini/Thumbs/Pereti/OtelInoxPeriat/S02.png)
+}
+.OtelInoxPeriat-S03:after {
+    content: url(imagini/Thumbs/Pereti/OtelInoxPeriat/S03.png)
+}
+.OtelInoxPeriat-S04:after {
+    content: url(imagini/Thumbs/Pereti/OtelInoxPeriat/S04.png)
+}
+
+.OtelInoxOglinda-S05:after {
+    content: url(imagini/Thumbs/Pereti/OtelInoxOglinda/S05.png)
+}
+.OtelInoxOglinda-S06:after {
+    content: url(imagini/Thumbs/Pereti/OtelInoxOglinda/S06.png)
+}
+.OtelInoxOglinda-S07:after {
+    content: url(imagini/Thumbs/Pereti/OtelInoxOglinda/S07.png)
+}
+.OtelInoxOglinda-S08:after {
+    content: url(imagini/Thumbs/Pereti/OtelInoxOglinda/S08.png)
+}
+
+.OtelInoxTexturat-S09:after {
+    content: url(imagini/Thumbs/Pereti/OtelInoxTexturat/S09.png)
+}
+.OtelInoxTexturat-S10:after {
+    content: url(imagini/Thumbs/Pereti/OtelInoxTexturat/S10.png)
+}
+.OtelInoxTexturat-S11:after {
+    content: url(imagini/Thumbs/Pereti/OtelInoxTexturat/S11.png)
+}
+.OtelInoxTexturat-S12:after {
+    content: url(imagini/Thumbs/Pereti/OtelInoxTexturat/S12.png)
+}
+
+.OtelInoxGravatElectroChimic-S13:after {
+    content: url(imagini/Thumbs/Pereti/OtelInoxGravatElectroChimic/S13.png)
+}
+.OtelInoxGravatElectroChimic-S14:after {
+    content: url(imagini/Thumbs/Pereti/OtelInoxGravatElectroChimic/S14.png)
+}
+.OtelInoxGravatElectroChimic-S15:after {
+    content: url(imagini/Thumbs/Pereti/OtelInoxGravatElectroChimic/S15.png)
+}
+.OtelInoxGravatElectroChimic-S16:after {
+    content: url(imagini/Thumbs/Pereti/OtelInoxGravatElectroChimic/S16.png)
+}
+
+.SticlaVopsita-CG01:after {
+    content: url(imagini/Thumbs/Pereti/SticlaVopsita/CG01.png)
+}
+.SticlaVopsita-CG02:after {
+    content: url(imagini/Thumbs/Pereti/SticlaVopsita/CG02.png)
+}
+.SticlaVopsita-CG03:after {
+    content: url(imagini/Thumbs/Pereti/SticlaVopsita/CG03.png)
+}
+.SticlaVopsita-CG04:after {
+    content: url(imagini/Thumbs/Pereti/SticlaVopsita/CG04.png)
+}
+.SticlaVopsita-CG05:after {
+    content: url(imagini/Thumbs/Pereti/SticlaVopsita/CG05.png)
+}
+.SticlaVopsita-CG06:after {
+    content: url(imagini/Thumbs/Pereti/SticlaVopsita/CG06.png)
+}
+.SticlaVopsita-CG07:after {
+    content: url(imagini/Thumbs/Pereti/SticlaVopsita/CG07.png)
+}
+.SticlaVopsita-CG08:after {
+    content: url(imagini/Thumbs/Pereti/SticlaVopsita/CG08.png)
+}
+.SticlaVopsita-CG09:after {
+    content: url(imagini/Thumbs/Pereti/SticlaVopsita/CG09.png)
+}
+.SticlaVopsita-CG10:after {
+    content: url(imagini/Thumbs/Pereti/SticlaVopsita/CG10.png)
+}
+
+.Piatraa-SG01:after {
+    content: url(imagini/Thumbs/Pereti/Piatraa/SG01.png)
+}
+.Piatraa-SG02:after {
+    content: url(imagini/Thumbs/Pereti/Piatraa/SG02.png)
+}
+.Piatraa-SG03:after {
+    content: url(imagini/Thumbs/Pereti/Piatraa/SG03.png)
+}
+.Piatraa-SG04:after {
+    content: url(imagini/Thumbs/Pereti/Piatraa/SG04.png)
+}
+.Piatraa-SG05:after {
+    content: url(imagini/Thumbs/Pereti/Piatraa/SG05.png)
+}
+.Piatraa-SG06:after {
+    content: url(imagini/Thumbs/Pereti/Piatraa/SG06.png)
+}
+.Piatraa-SG07:after {
+    content: url(imagini/Thumbs/Pereti/Piatraa/SG07.png)
+}
+.Piatraa-SG08:after {
+    content: url(imagini/Thumbs/Pereti/Piatraa/SG08.png)
+}
+.Piatraa-SG09:after {
+    content: url(imagini/Thumbs/Pereti/Piatraa/SG09.png)
+}
+.Piatraa-SG10:after {
+    content: url(imagini/Thumbs/Pereti/Piatraa/SG10.png)
+}
